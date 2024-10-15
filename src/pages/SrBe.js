@@ -1,13 +1,23 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+import { useEffect
 
+ } from 'react';
 const SrBe = () => {
   const navigate = useNavigate()
 
   const navigateToHome = () =>{
     navigate('/')
   }
-
+  
+  useEffect(()=>{
+    // Setting the background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+  
   return (
     <div>
       <h1>Review of Failed Technical Interview - SR - Backend</h1>

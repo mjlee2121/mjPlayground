@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const Edo = () => {
@@ -18,8 +18,16 @@ const Edo = () => {
   const handleReset = () => {
     setSavedLetter('')
   }
+
+  useEffect(()=>{
+    // Setting the background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
   return (
-    <div className='page-body'>
+    <div className='container'>
       <div className='problem-description'>
         <h1>Review of Failed Technical Interview- EDO</h1>      
         <p>I couldn't solve this problem when I was taking technical take home test for a company called EDO</p>

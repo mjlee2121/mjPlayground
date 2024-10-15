@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 
 const SrFe = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [procedureCodes, setProcedureCodes] = useState('')
   const [savedProcedureCodes, setSavedProcedureCodes] = useState('')
+
 
   const [multipleInput, setMultipleInput] = useState({
     tankName: '',
@@ -29,6 +29,16 @@ const SrFe = () => {
   const navigateToHome = () =>{
     navigate('/')
   }
+
+
+  useEffect(()=>{
+    // Setting the background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+
   const handleChange = (event) => {
     const {name,value} = event.target
     

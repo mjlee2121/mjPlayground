@@ -1,5 +1,8 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Lottie from 'lottie-react'
+import animationData from '../assets/aniki_hamster.json'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -23,11 +26,20 @@ export const Home = () => {
     navigate('/boxpage')
   }
 
+  useEffect(()=>{
+    // Setting the background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+
   return (
-    <div>
+    <div className='container'>
       <div className='introduction'>
 
         <h1>Home Page</h1>
+        <Lottie style={{ width: 200, height: 200 }} animationData={animationData}></Lottie>
         <h2>Hi, this is home page to my React playground</h2>
         <p>If you'd like to go to other pages, please click from below</p>
       </div>
@@ -42,8 +54,6 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToSrBe}>SR-BackEnd</button>
       </div>
     </div>
-    
-
   )
 }
 

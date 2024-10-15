@@ -9,7 +9,9 @@ import BoxPage from './pages/BoxPage'
 import { Animation } from './pages/Animation';
 
 function App() {
+  
   return (
+    
     <div>
       {/* Define routes inside Router */}
       <Router>

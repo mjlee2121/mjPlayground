@@ -1,8 +1,17 @@
 import React from 'react'
 import Box from '../component/Box';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 const BoxPage = () => {
+  useEffect(()=>{
+    document.body.classList.add('universal-bg')
+    
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+
   const navigate = useNavigate()
 
   const navigateToHome = () =>{

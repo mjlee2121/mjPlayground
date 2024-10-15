@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import Lottie from 'lottie-react'
 import animationData from '../assets/aniki_hamster.json'
 
@@ -10,10 +11,18 @@ export const Animation = () => {
     navigate('/')
   }
 
+  useEffect(()=>{
+    // Setting the background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+
   return (
     <div>
       <h1>Hi this is animation page</h1>
-      <Lottie style={{ width: 300, height: 300 }} animationData={animationData}></Lottie>
+      <p>Currently on construction</p>
       <button className='navigate-button' onClick={navigateToHome}>Go to Home</button>  
     </div>
 
