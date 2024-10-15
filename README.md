@@ -1,6 +1,6 @@
 # mjPlayground
 
-This project is to practive react.
+This project is to practice react.
 It includes some reviews of technical interview questions that I took
 
-[!alt text](https://github.com/mjlee2121/mjPlayground/mjplayground.png)
+[screenshot](/Users/minjilee/Project/mjPlayground/src/assets/mjplayground.png)
