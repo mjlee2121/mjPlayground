@@ -1,31 +1,85 @@
+/*----------------------- Universal -----------------------*/
+* {
+  padding-top:5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.page-description {
+
+}
+
+.navigate-button {
+  width: 150px;
+  height: 50px;
+  background-color: #3581c4;
+  font-family:Arial, Helvetica, sans-serif;
+  transition: 0.5s;
+  border-radius: 6px;
+}
+
+.navigate-button:hover {
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  font-family:Arial, Helvetica, sans-serif;
+  border-radius: 6px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/*----------------------- BoxPage -----------------------*/
+
+.box{
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  color: grey;
+}
+
+.first-line{
+  padding: 10px;
+  margin: 5px;
+  background-color: grey;
+}
+.second-line{
+  padding: 10px;
+  margin: 5px;
+  background-color: grey;
+}
+
+.question-label {
+  padding: 10px;
+  margin: 10px;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.visible {
+  display:block;
+  width: 500px;
+  height: 20px;
+  border: 1px solid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hidden {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.warning {
+  width: 500px;
+  height: 20px;
+  border: 1px solid;
+  color: orange;
 }
 
-.App-link {
-  color: #61dafb;
+
+/*----------------------- Home -----------------------*/
+.home-icon{
+  padding:10px;
+  color: navy;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +89,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/*----------------------- EDO ----------------------- */
+
+.number-button {
+  width: 36px;
+  height: 36px;
+  border-width: 1px;
+  background-color: orange;
+  transition: 0.5s;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.number-button:hover{
+  background-color: white;
+  border-radius: 6px;
+  border-width: 1px;
+  transition: 0.5s;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.reset-button {
+  margin: 10px;
+  
+}
+
+
+/*----------------------- SR - FE -----------------------*/
+#inspectionForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-visible {
+  display:block;
+}
+.sr-invisible {
+  display: none;
 }
