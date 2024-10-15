@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/mjplayground/static/css/main.1152611a.css",
-    "main.js": "/mjplayground/static/js/main.2fea5853.js",
-    "static/js/453.06c464ff.chunk.js": "/mjplayground/static/js/453.06c464ff.chunk.js",
-    "index.html": "/mjplayground/index.html",
-    "main.1152611a.css.map": "/mjplayground/static/css/main.1152611a.css.map",
-    "main.2fea5853.js.map": "/mjplayground/static/js/main.2fea5853.js.map",
-    "453.06c464ff.chunk.js.map": "/mjplayground/static/js/453.06c464ff.chunk.js.map"
+    "main.css": "/mjPlayground/static/css/main.1152611a.css",
+    "main.js": "/mjPlayground/static/js/main.a5dcad2c.js",
+    "static/js/453.06c464ff.chunk.js": "/mjPlayground/static/js/453.06c464ff.chunk.js",
+    "index.html": "/mjPlayground/index.html",
+    "static/media/favicon.svg": "/mjPlayground/static/media/favicon.8f21ea829b72c61473b1e92ab44a7297.svg",
+    "main.1152611a.css.map": "/mjPlayground/static/css/main.1152611a.css.map",
+    "main.a5dcad2c.js.map": "/mjPlayground/static/js/main.a5dcad2c.js.map",
+    "453.06c464ff.chunk.js.map": "/mjPlayground/static/js/453.06c464ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1152611a.css",
-    "static/js/main.2fea5853.js"
+    "static/js/main.a5dcad2c.js"
   ]
 }
