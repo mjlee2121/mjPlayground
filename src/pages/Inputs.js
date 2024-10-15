@@ -4,6 +4,15 @@ import HomeIcon from '../component/HomeIcon'
 
 const Inputs = () => {
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    //background color
+    document.body.classList.add('universal-bg')
+    return ()=>{
+      document.body.classList.remove('universal-bg')
+    }
+  },[])
+
   const [inputNumber, setInputNumber] = useState('')
   const [multipleInput, setMultipleInput] = useState({
     userName:'',
