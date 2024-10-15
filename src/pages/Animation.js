@@ -1,8 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import Lottie from 'lottie-react'
-import animationData from '../assets/aniki_hamster.json'
 
 export const Animation = () => {
   const navigate = useNavigate()

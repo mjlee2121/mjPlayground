@@ -76,7 +76,7 @@ const SrFe = () => {
 
   const handleProcedureCodeChange = (event) => {
     const {name, value} = event.target
-    console.log('my valu', value)
+    console.log('my value', value)
     setProcedureCodes(value)
 
   }
