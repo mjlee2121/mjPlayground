@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import animationData from '../assets/aniki_hamster.json'
-import favicon from '../assets/favicon.svg'
 
 export const Home = () => {
   const navigate = useNavigate()
