@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 const SrFe = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [procedureCodes, setProcedureCodes] = useState('')
-  const [savedProcedureCodes, setSavedProcedureCodes] = useState('')
-
+  const [savedProcedureCodes, setSavedProcedureCodes] = useState([])
+  const [pcToDelete, setPcToDelete] = useState('')
+  const [doesPCExist, setDoesPCExist] = useState(true)
 
   const [multipleInput, setMultipleInput] = useState({
     tankName: '',
@@ -76,16 +77,48 @@ const SrFe = () => {
 
   const handleProcedureCodeChange = (event) => {
     const {name, value} = event.target
-    console.log('my value', value)
+    console.log('my name and value', name, value)
     setProcedureCodes(value)
 
   }
   const handleProcedureCodeFormSubmit = (event) =>{
     event.preventDefault()
-    setSavedProcedureCodes(procedureCodes)
+    setSavedProcedureCodes([...savedProcedureCodes, ' ', procedureCodes]) //  adding space in between the inputs
+    console.log('saved pc:',savedProcedureCodes)
     setProcedureCodes('')
 
   }
+
+  const handleDeleteSubmit = (event) =>{
+    event.preventDefault()
+
+    if (savedProcedureCodes.includes(pcToDelete)){
+      const updatedPc = savedProcedureCodes.filter((item)=> item!==pcToDelete)
+      setSavedProcedureCodes(updatedPc)
+      setDoesPCExist(true)
+      setPcToDelete('')
+    } else {
+      setDoesPCExist(false)
+    }
+    
+  }
+
+  const deleteMessage = (doesPCExist) =>{
+    if (doesPCExist){ // true
+      return 'Successfully deleted'
+    } else{
+      return 'Please put in the existing code!'
+    }
+
+  }
+
+  const handleDeleteChange = (event) =>{
+    setPcToDelete(event.target.value)
+  }
+
+  useEffect(()=>{
+
+  },[procedureCodes])
 
   return (
     <div>
@@ -174,8 +207,7 @@ const SrFe = () => {
                 <input type='submit' /><br />
             </div>
           </form>
-          
-          <form id='procedureCodeForm' submit={handleProcedureCodeFormSubmit}>
+          <form id='procedureCodeForm' onSubmit={handleProcedureCodeFormSubmit}>
             <div className='form-procedure-codes'>
               <label>Enter the procedure codes</label>
                   <input 
@@ -186,10 +218,27 @@ const SrFe = () => {
                     onChange={handleProcedureCodeChange}
                     placeholder='Enter the procedure codes'
                     /><br />
-                  <input type='submit' /><br />
+            <input type='submit' /><br /><br />
+
             </div>
           </form>
-
+          <form id='procedureCodeDeleteForm' onSubmit={handleDeleteSubmit}>
+            <div className='form-procedure-codes-delete'>
+              <label>Enter the procedure codes to delete</label>
+                  <input 
+                    type='text'
+                    name='procedureCodes'
+                    style={{width:'200px'}}
+                    value={pcToDelete}
+                    onChange={handleDeleteChange}
+                    placeholder='Enter the code to delete'
+                    /><br />
+                    <input type='submit' /><br />
+            </div>
+          </form>
+          <div>
+            <p className={doesPCExist ? 'PCExists' : 'PCNotExist'}>{deleteMessage(doesPCExist)}</p>
+          </div>
           <div>
           <b>Current Values</b>
           <p>Tank Name:  {savedMultipleInput.tankName}</p>
@@ -197,7 +246,7 @@ const SrFe = () => {
           <p>Tank Radius:  {savedMultipleInput.tankRadius}</p>
           <p>Inspection Type:  {savedMultipleInput.inspectionType}</p>
           <p>bottom Thickness:  {savedMultipleInput.bottomThickness}</p>
-          <p>Procedure Codes:  {savedProcedureCodes.procedureCodes}</p>
+          <p>Procedure Codes: {savedProcedureCodes}</p>
           </div>
           
         </div>

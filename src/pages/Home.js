@@ -25,7 +25,15 @@ export const Home = () => {
   const navigateToBox = () =>{
     navigate('/boxpage')
   }
-
+  const navigateToIDE = ()=>{
+    navigate('/ide')
+  }
+  const navigateToTravel = ()=>{
+    navigate('/travel')
+  }
+  const navigateToAPIEndpoint = () =>{
+    navigate('/apiendpoint')
+  }
   useEffect(()=>{
     // Setting the background color
     document.body.classList.add('universal-bg')
@@ -48,6 +56,10 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
         <button className='navigate-button' onClick={navigateToAnimation}>Animation Page</button>
         <button className='navigate-button' onClick={navigateToBox}>Box Page</button>
+        <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
+        <button className='navigate-button' onClick={navigateToTravel}>Travel</button>
+        <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
+
         <h2>Technical Interviews Review</h2>
         <button className='navigate-button' onClick={navigateToEdo}>EDO</button>
         <button className='navigate-button' onClick={navigateToSrFe}>SR-FrontEnd</button>

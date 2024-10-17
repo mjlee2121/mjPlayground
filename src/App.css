@@ -129,8 +129,28 @@
 }
 
 .sr-visible {
-  display:block;
+  display: block;
 }
 .sr-invisible {
   display: none;
+}
+
+.PCExists {
+  display: block;
+  color: green;
+  width: 200px;
+  border: 1px solid green;
+  border-color: green;
+  border-radius: 6px;
+}
+
+.PCNotExist {
+  display: block;
+  color: red;
+  width: 200px;
+  border: 1px solid red;
+  border-color: red;
+  border-radius: 6px;
+
+
 }
