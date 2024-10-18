@@ -20,26 +20,43 @@ const APIEndpoint = () => {
 
   const endpointCodes =`
   from pydantic import BaseModel
-  from fastapi import FastAPI
+  from fastapi import FastAPI, HTTPException
 
   app = FastAPI()
 
-  class UserInput(BaseModel):
-    name: str
-    price: float
+  class Input(BaseModel):
+    name: ''
+    price: 0
+    revenue: 0
+    is_available: true
 
+  class MarketPlace():
+    def __init__(self):
+      self.name= ''
+      self.price= 0
+      self.revenue = 0
+      self.is_available = true
   
+  mp = MarketPlace()
+
   @app.post('/submit/')
   async def receive_input(user_input: UserInput):
+    
+    mp.item.name = user_input.name
+    mp.item.price = user_input.price
+    
     return {
       "message": "200",
       "user_data": user_input
       }
+
   @app.get('/available')
   async def is_available():
     return {
+      "message": "true"
 
     }
+
   @app.get('/revenue')
   async def get_revenue():
     return {
