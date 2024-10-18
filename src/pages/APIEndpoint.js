@@ -32,26 +32,38 @@ const APIEndpoint = () => {
 
   class MarketPlace():
     def __init__(self):
-      self.name= ''
-      self.price= 0
-      self.revenue = 0
-      self.is_available = true
-  
+      self.item_map = {}
+
+    def add_item(self, input: Input):
+      self.item_map[input.name] = {
+        price = input.price
+        revenue = input.revenue
+        is_available = input.is_available
+      }
+      
+    def sell_item(self, input: Input):
+      self.item_map.pop(input.name)
+
+    def get_item(self, input: Input):
+      if input.name in self.item_map:
+        return self.item_map[input.name]
+      else:
+        return None
+
   mp = MarketPlace()
 
   @app.post('/submit/')
-  async def receive_input(user_input: UserInput):
-    
-    mp.item.name = user_input.name
-    mp.item.price = user_input.price
-    
+  async def create_input(user_input: Input, status_code = 200):
+    mp.add_item(user_input)
+
     return {
-      "message": "200",
+      "message": "Successfully added the item",
       "user_data": user_input
       }
 
-  @app.get('/available')
+  @app.get('/available', status_code = 200)
   async def is_available():
+    item = 
     return {
       "message": "true"
 
@@ -73,8 +85,9 @@ const APIEndpoint = () => {
       Endpoints: <br /><br />
 
 	    1.	<b>Post.</b> Takes in an item that has name, value. Returns 200 when item is successfully stored in the record. Assume every item name is unique.<br />
-	    2.	<b>Get.</b> Returns true if the item is available.<br />
-	    3.	<b>Get.</b> Return total revenue of sold items.<br />
+	    2.  <b>Post.</b> Sell an item based on the name.
+      3.  <b>Get.</b> Returns true if the item is available.<br />
+	    4.	<b>Get.</b> Return total revenue of sold items.<br />
       </p>
       <h1>Solution</h1>
       <Editor 

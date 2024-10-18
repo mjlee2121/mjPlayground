@@ -17,7 +17,7 @@ function App() {
     
     <div>
       {/* Define routes inside Router */}
-      <Router>
+      <Router basename="/mjPlayground">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inputs" element={<Inputs />} />
