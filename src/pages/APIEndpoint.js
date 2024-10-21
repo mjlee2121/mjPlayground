@@ -20,60 +20,52 @@ const APIEndpoint = () => {
 
   const endpointCodes =`
   from pydantic import BaseModel
-  from fastapi import FastAPI, HTTPException
+  from fastapi import FastAPI, HTTPException, response
 
   app = FastAPI()
 
-  class Input(BaseModel):
-    name: ''
-    price: 0
-    revenue: 0
-    is_available: true
+  fm = []
+  total_revenue = 0 
 
-  class MarketPlace():
-    def __init__(self):
-      self.item_map = {}
+  # post a listing
+  @app.post('/post')
+  async def post(listing: Listing, response: Response):
+    if listing not in fm:
+      fm.append(listing)
+      response.status_code=200
+      return {"message":f"{listing} has been added"}
+    else:
+      raise HTTPException(status_code=404, detail="item already exist")
 
-    def add_item(self, input: Input):
-      self.item_map[input.name] = {
-        price = input.price
-        revenue = input.revenue
-        is_available = input.is_available
-      }
+
+  @app.get('/')
+  async def get_all_items():
+    return {"all the items are": fm}
+
+
+  @app.delete('/purchase/{listing_id}')
+  async def purchase(listing_id:int):
+    global total_revenue
+    for listing in fm:
+      if listing.id == listing_id:
+        total_revenue = total_revenue + listing.price
+        fm.remove(listing)
+        return {"message":f"{listing.name} has been purchased"}
+    else:
+      raise HTTPException(status_code=404, detail="the item is not available")
       
-    def sell_item(self, input: Input):
-      self.item_map.pop(input.name)
 
-    def get_item(self, input: Input):
-      if input.name in self.item_map:
-        return self.item_map[input.name]
-      else:
-        return None
+  @app.get('/is_available/{listing_id}')
+  async def is_available(listing_id: int):
+    for listing in fm:
+      if listing.id == listing_id:
+        return {"message": 'true'}
+    
+    return HTTPException(status_code=404, detail="the item is not available")
 
-  mp = MarketPlace()
-
-  @app.post('/submit/')
-  async def create_input(user_input: Input, status_code = 200):
-    mp.add_item(user_input)
-
-    return {
-      "message": "Successfully added the item",
-      "user_data": user_input
-      }
-
-  @app.get('/available', status_code = 200)
-  async def is_available():
-    item = 
-    return {
-      "message": "true"
-
-    }
-
-  @app.get('/revenue')
-  async def get_revenue():
-    return {
-
-    }
+  @app.get('/get_total_revenue')
+  async def get_total_revenue():
+    return {"total revenue:": total_revenue}
   `
 
   return (
