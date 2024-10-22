@@ -19,18 +19,10 @@ export const Home = () => {
   const  navigateToSrBe = () =>{
     navigate('/sr-be')
   }
-  const navigateToAnimation = () =>{
-    navigate('/animation')
-  }
-  const navigateToBox = () =>{
-    navigate('/boxpage')
-  }
   const navigateToIDE = ()=>{
     navigate('/ide')
   }
-  const navigateToTravel = ()=>{
-    navigate('/travel')
-  }
+  
   const navigateToAPIEndpoint = () =>{
     navigate('/apiendpoint')
   }
@@ -54,10 +46,7 @@ export const Home = () => {
       <div className='links'>
         <h2>Play ground</h2>
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
-        <button className='navigate-button' onClick={navigateToAnimation}>Animation Page</button>
-        <button className='navigate-button' onClick={navigateToBox}>Box Page</button>
         <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
-        <button className='navigate-button' onClick={navigateToTravel}>Travel</button>
         <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
 
         <h2>Technical Interviews Review</h2>
