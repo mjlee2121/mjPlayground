@@ -18,9 +18,20 @@ const APIEndpoint = () => {
     }
   },[])
 
+  const modelsCodes = `
+  from fastapi import FastAPI
+  from pydantic import BaseModel
+
+  class Listing(BaseModel):
+    id: int
+    name: str
+    price: float
+  `
+
   const endpointCodes =`
   from pydantic import BaseModel
   from fastapi import FastAPI, HTTPException, response
+  from models import Listing
 
   app = FastAPI()
 
@@ -81,7 +92,22 @@ const APIEndpoint = () => {
       3.  <b>Get.</b> Returns true if the item is available.<br />
 	    4.	<b>Get.</b> Return total revenue of sold items.<br />
       </p>
-      <h1>Solution</h1>
+      <h1>models.py</h1>
+      <Editor
+        height='60vh' 
+        width='100vw' 
+        theme='vs-dark'
+        options={{
+          fontSize:14,
+          minimap:{
+            enabled: false
+          }
+        }}
+        defaultLanguage='python' 
+        defaultValue={modelsCodes}
+      />
+
+      <h1>main.py</h1>
       <Editor 
           height='70vh' 
           width='100vw' 
