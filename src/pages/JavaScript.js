@@ -2,6 +2,9 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Editor } from '@monaco-editor/react';
+import { map1Codes, map2Codes, filter1Codes } from '../codeQueries/JavaScriptQuery.js'
+// import map2Codes from '../codeQueries/JavaScriptQuery.js'
+// import filter1Codes from '../codeQueries/JavaScriptQuery.js'
 
 const JavaScript = () => {
   const navigate = useNavigate()
@@ -9,6 +12,7 @@ const JavaScript = () => {
   const navigateToHome = () =>{
     navigate('/')
   }
+
   useEffect(()=>{
     // Setting the background color
     document.body.classList.add('universal-bg')
@@ -16,15 +20,21 @@ const JavaScript = () => {
       document.body.classList.remove('universal-bg')
     }
   },[])
+  /** below is for map1 practice */
+  // const map1Codes = `
+  //   const array1 = [1,4,9,16];
+  //   const map1 = array1.map(function(x) =>{
+  //     return x**2;})
+  // `
 
-  const modelsCodes =`
-  const array1 = [1,4,9,16];
-  const map1 = array1.map(function(x) =>{
-    return x**2;})
-
-  `
-
-
+  /** below is for map2 practice*/
+  const array2 = [1,2,3,4,5,6,7,8,9,10]
+  const handleClick2= (number)=>{
+    console.log(number)
+  }
+  
+  /** below is for filter1 1 practice */
+  
   return (
     <div>
       <h1>Introduction</h1>
@@ -34,11 +44,11 @@ const JavaScript = () => {
       <li><a href="#filter">filter</a></li>
 
       <div id="map">
-        <h1>.map</h1>
-        <p>Practice of .map function</p>
+        <h1>.map-1</h1>
+        <p>Print out the square values of elements in an array</p>
         <Editor
-          height='60vh' 
-          width='100vw' 
+          height='25vh' 
+          width='97vw' 
           theme='vs-dark'
           options={{
             fontSize:14,
@@ -47,13 +57,39 @@ const JavaScript = () => {
             }
           }}
           defaultLanguage='python' 
-          defaultValue={modelsCodes}
+          defaultValue={map1Codes}
+        />
+
+        <h1>.map-2</h1>
+        <p>Create 10 buttons using map</p>
+        <p>And print out the clicked button's number on console log</p>
+        {array2.map((number) => (
+            <button className='number-button' key={number} onClick={()=>{handleClick2(number)}}>
+              {number}
+            </button>
+        ))}
+        <br />
+        <br />
+        <br />
+        <Editor
+          height='40vh' 
+          width='97vw' 
+          theme='vs-dark'
+          options={{
+            fontSize:14,
+            minimap:{
+              enabled: false
+            }
+          }}
+          defaultLanguage='python' 
+          defaultValue={map2Codes}
         />
       </div>
 
       <div id="filter">
         <h1>.filter</h1>
-        <p>practice of .filter function</p>
+        <p>Given an array of numbers, use the filter() method to create a new array containing only even numbers and show them on the UI</p>
+
         <Editor
           height='60vh' 
           width='100vw' 
@@ -65,7 +101,7 @@ const JavaScript = () => {
             }
           }}
           defaultLanguage='python' 
-          defaultValue={modelsCodes}
+          defaultValue={filter1Codes}
         />
       </div>
       

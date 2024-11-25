@@ -26,6 +26,7 @@ const Edo = () => {
       document.body.classList.remove('universal-bg')
     }
   },[])
+
   return (
     <div className='container'>
       <div className='problem-description'>
