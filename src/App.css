@@ -1,4 +1,8 @@
 /*----------------------- Universal -----------------------*/
+html{
+  scroll-behavior: smooth;
+}
+
 .universal-bg {
   background: linear-gradient(#8DC7B4, #C7DDDA,#EDC6B4);
   justify-content: center;

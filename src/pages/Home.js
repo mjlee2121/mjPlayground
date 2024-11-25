@@ -22,10 +22,13 @@ export const Home = () => {
   const navigateToIDE = ()=>{
     navigate('/ide')
   }
-  
+  const navigateToJavaScript = ()=>{
+    navigate('/javascript')
+  }
   const navigateToAPIEndpoint = () =>{
     navigate('/apiendpoint')
   }
+
   useEffect(()=>{
     // Setting the background color
     document.body.classList.add('universal-bg')
@@ -48,6 +51,8 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
         <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
         <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
+        <button className='navigate-button' onClick={navigateToJavaScript}>JavaScript</button>
+
 
         <h2>Technical Interviews Review</h2>
         <button className='navigate-button' onClick={navigateToEdo}>EDO</button>

@@ -88,7 +88,7 @@ const APIEndpoint = () => {
       Endpoints: <br /><br />
 
 	    1.	<b>Post.</b> Takes in an item that has name, value. Returns 200 when item is successfully stored in the record. Assume every item name is unique.<br />
-	    2.  <b>Post.</b> Sell an item based on the name.
+	    2.  <b>Post.</b> Sell an item based on the name.<br />
       3.  <b>Get.</b> Returns true if the item is available.<br />
 	    4.	<b>Get.</b> Return total revenue of sold items.<br />
       </p>
