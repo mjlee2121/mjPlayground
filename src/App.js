@@ -7,7 +7,7 @@ import SrFe from './pages/SrFe'
 import SrBe from './pages/SrBe'
 import Ide from './pages/Ide'
 import APIEndpoint from './pages/APIEndpoint'
-import JavaScript from './pages/JavaScript'
+import JSES6 from './pages/JSES6.js'
 
 function App() {
   
@@ -18,7 +18,7 @@ function App() {
       <Router basename="/mjPlayground">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/javascript" element={<JavaScript />}/>
+          <Route path="/jses6" element={<JSES6 />}/>
           <Route path="/inputs" element={<Inputs />} />
           <Route path="/edo" element={<Edo />} />
           <Route path="/sr-fe" element={<SrFe />} />

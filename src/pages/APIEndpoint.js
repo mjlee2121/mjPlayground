@@ -94,7 +94,7 @@ const APIEndpoint = () => {
       </p>
       <h1>models.py</h1>
       <Editor
-        height='60vh' 
+        height='40vh' 
         width='100vw' 
         theme='vs-dark'
         options={{

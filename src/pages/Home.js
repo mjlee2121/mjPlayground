@@ -22,8 +22,8 @@ export const Home = () => {
   const navigateToIDE = ()=>{
     navigate('/ide')
   }
-  const navigateToJavaScript = ()=>{
-    navigate('/javascript')
+  const navigateToJSES6 = ()=>{
+    navigate('/jses6')
   }
   const navigateToAPIEndpoint = () =>{
     navigate('/apiendpoint')
@@ -51,7 +51,7 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
         <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
         <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
-        <button className='navigate-button' onClick={navigateToJavaScript}>JavaScript</button>
+        <button className='navigate-button' onClick={navigateToJSES6}>JavaScript</button>
 
 
         <h2>Technical Interviews Review</h2>
