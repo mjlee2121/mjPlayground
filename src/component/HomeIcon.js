@@ -10,7 +10,7 @@ const HomeIcon = () => {
   }
   return (
     <div className='home-icon'>
-      <i class="fa-solid fa-house" size='2x' style={{cursor:'pointer'}} onClick={handleClick}></i>
+      <i className="fa-solid fa-house" size='2x' style={{cursor:'pointer'}} onClick={handleClick}></i>
     </div>
   )
 }

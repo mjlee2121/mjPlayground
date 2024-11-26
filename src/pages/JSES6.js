@@ -80,7 +80,9 @@ const JavaScript = () => {
       <li><a href="#filter">filter</a></li>
       <li><a href="#reduce">reduce</a></li>
       <li><a href="#foreach">forEach</a></li>
-      <li><a href="#async">async</a></li>
+      <li><a href="#sum">sum</a></li>
+      <li><a href="#sort">sort</a></li>
+      <li><a href="#every">every</a></li>
 
 
       <div id="map">
@@ -213,7 +215,7 @@ const JavaScript = () => {
       </div>
 
       {/******** forEach functions ********/}
-      <div id="forEach">
+      <div id="foreach">
         <h1>7. forEach-1</h1>
         <p>Write a function that prints the name of students and indicate whether they passed (score greater or equal to 50) or failed</p>
 
@@ -226,7 +228,7 @@ const JavaScript = () => {
         {studentScore.map((result, index)=>(
           <li key={index}>{result}</li>
         ))}
-        
+
         <Editor
           height='40vh' 
           width='100vw' 

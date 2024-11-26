@@ -54,7 +54,7 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
         <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
         <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
-        <button className='navigate-button' onClick={navigateToJSES6}>JS ES6</button>
+        <button className='navigate-button' onClick={navigateToJSES6}>JS ES6 Array Methods</button>
         <button className='navigate-button' onClick={navigateToJSStaticMethods}>JS Static Methods</button>
 
 
