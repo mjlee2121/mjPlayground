@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Editor } from '@monaco-editor/react';
-import { map1Codes, map2Codes, filter1Codes,reduceCodes1, codes6 } from '../codeQueries/JavaScriptQuery.js'
+import { map1Codes, map2Codes, filter1Codes,reduceCodes1, codes6, codes7 } from '../codeQueries/JavaScriptQuery.js'
 // import map2Codes from '../codeQueries/JavaScriptQuery.js'
 // import filter1Codes from '../codeQueries/JavaScriptQuery.js'
 
@@ -55,7 +55,21 @@ const JavaScript = () => {
   const summation = array6.reduce((sum, num)=>sum+num, 0)
 
   /** below is for 7. forEach1 practice */
+  const array7 = [
+    {name: "Alice", score:85},
+    {name: "Bob", score:35},
+    {name: "Charlie", score:55},
+    {name: "Daisy", score:90},
+  ]
+  const studentScore =[]
 
+  array7.forEach((student)=>{
+    if(student.score>=50){
+      studentScore.push(`${student.name} has passed`)
+    } else{
+      studentScore.push(`${student.name} has failed`)
+    }
+  })
 
   return (
     <div>
@@ -138,7 +152,7 @@ const JavaScript = () => {
         <b>Array:</b> {array4}<br />
         <b>Result:</b> {removeDupNum}
         <Editor
-          height='30vh' 
+          height='25vh' 
           width='100vw' 
           theme='vs-dark'
           options={{
@@ -155,7 +169,7 @@ const JavaScript = () => {
       {/******** reduce functions ********/}
       <div id="reduce">
           <h1>5. reduce-1</h1>
-          <p>Write a function to count the frequency of each element in an array using the reduce method</p>
+          <p>Write a function to count the frequency of each fruit in an array using the reduce method</p>
           <b>Array:</b> {array5.join(", ")}<br />
           <b>Result:</b> {JSON.stringify(frequency)}
           {Object.entries(frequency).map(([key,value])=>(
@@ -182,7 +196,7 @@ const JavaScript = () => {
           <b>Array:</b> {array6}<br />
           <b>Result:</b> {summation}<br />
           <Editor
-            height='30vh' 
+            height='25vh' 
             width='100vw' 
             theme='vs-dark'
             options={{
@@ -200,7 +214,32 @@ const JavaScript = () => {
 
       {/******** forEach functions ********/}
       <div id="forEach">
+        <h1>7. forEach-1</h1>
+        <p>Write a function that prints the name of students and indicate whether they passed (score greater or equal to 50) or failed</p>
 
+        <b>Array:</b> 
+        {array7.map((person, index)=>(
+          <p key={index}> {person.name}, {person.score}</p>
+        ))}<br />
+
+        <b>Result:</b><br />
+        {studentScore.map((result, index)=>(
+          <li key={index}>{result}</li>
+        ))}
+        
+        <Editor
+          height='40vh' 
+          width='100vw' 
+          theme='vs-dark'
+          options={{
+            fontSize:14,
+            minimap:{
+              enabled: false
+            }
+          }}
+          defaultLanguage='python' 
+          defaultValue={codes7}
+        />
       </div>
 
       {/******** async functions ********/}

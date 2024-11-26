@@ -8,6 +8,7 @@ import SrBe from './pages/SrBe'
 import Ide from './pages/Ide'
 import APIEndpoint from './pages/APIEndpoint'
 import JSES6 from './pages/JSES6.js'
+import JSStaticMethods from './pages/JSStaticMethods.js';
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/jses6" element={<JSES6 />}/>
+          <Route path="/jsstaticmethods" element={<JSStaticMethods />}/>
           <Route path="/inputs" element={<Inputs />} />
           <Route path="/edo" element={<Edo />} />
           <Route path="/sr-fe" element={<SrFe />} />

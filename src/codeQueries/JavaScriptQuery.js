@@ -39,6 +39,24 @@ export const codes6 = `
   const array6 = [1,2,3,4,5]
   const summation = array6.reduce((sum, num)=>sum+num, 0)
 `
+
+export const codes7 = `
+  const array7 = [
+    {name: "Alice", score:85},
+    {name: "Bob", score:35},
+    {name: "Charlie", score:55},
+    {name: "Daisy", score:90},
+  ]
+  const studentScore =[]
+
+  array7.forEach((student)=>{
+    if(student.score>=50){
+      studentScore.push($ {student.name} has passed)
+    } else{
+      studentScore.push($ {student.name} has failed)
+    }
+  })
+`
 const JavaScriptQuery = () => {
   
   
