@@ -19,12 +19,14 @@ const Inputs = () => {
     email:'',
     age:''
   })
+
   const [isVisible, setIsVisible] = useState(false)
   const [savedNumber, setSavedNumber] = useState(0)
   const [savedMultipleInput, setSavedMultipleInput] = useState({
     userName:'',
     age:''
   })
+
   const increase=()=>{
     setSavedNumber(parseInt(savedNumber, 10)+1)
   }
@@ -45,7 +47,7 @@ const Inputs = () => {
 
 
   const handleSubmit= (event)=> {
-    event.preventDefault()
+    event.preventDefault() // prevent the page to refresh
     const parsedValue = parseInt(inputNumber, 10)
 
     if (!isNaN(parsedValue)){

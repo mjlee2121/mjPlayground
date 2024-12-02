@@ -9,6 +9,7 @@ import Ide from './pages/Ide'
 import APIEndpoint from './pages/APIEndpoint'
 import JSES6 from './pages/JSES6.js'
 import JSStaticMethods from './pages/JSStaticMethods.js';
+import WPI from './pages/WPI.js';
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
           <Route path="/sr-be" element={<SrBe />} />
           <Route path="/ide" element={<Ide />} />
           <Route path="/apiendpoint" element={<APIEndpoint />} />
+          <Route path="/wpi" element={<WPI />} />
         </Routes>
       </Router>
       

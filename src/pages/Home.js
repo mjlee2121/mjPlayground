@@ -31,6 +31,9 @@ export const Home = () => {
   const navigateToJSStaticMethods = () =>{
     navigate('/jsstaticmethods')
   }
+  const navigateToWPI = () =>{
+    navigate('/wpi')
+  }
 
   useEffect(()=>{
     // Setting the background color
@@ -62,6 +65,7 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToEdo}>EDO</button>
         <button className='navigate-button' onClick={navigateToSrFe}>SR-FrontEnd</button>
         <button className='navigate-button' onClick={navigateToSrBe}>SR-BackEnd</button>
+        <button className='navigate-button' onClick={navigateToWPI}>WPI</button>
       </div>
     </div>
   )
