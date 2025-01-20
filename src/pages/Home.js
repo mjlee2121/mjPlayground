@@ -34,6 +34,9 @@ export const Home = () => {
   const navigateToWPI = () =>{
     navigate('/wpi')
   }
+  const navigateToRamp = () => {
+    navigate('/ramp')
+  }
 
   useEffect(()=>{
     // Setting the background color
@@ -61,11 +64,14 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToJSStaticMethods}>JS Static Methods</button>
 
 
+
         <h2>Technical Interviews Review</h2>
         <button className='navigate-button' onClick={navigateToEdo}>EDO</button>
         <button className='navigate-button' onClick={navigateToSrFe}>SR-FrontEnd</button>
         <button className='navigate-button' onClick={navigateToSrBe}>SR-BackEnd</button>
         <button className='navigate-button' onClick={navigateToWPI}>WPI</button>
+        <button className='navigate-button' onClick={navigateToRamp}>Ramp</button>
+
       </div>
     </div>
   )
