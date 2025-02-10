@@ -177,7 +177,69 @@ const APIEndpoint = () => {
   @app.get('/day_class_occupancy/{day}')
   async def class_occupancy(day: str):
     return {"message":f"{day}day occupancy is {day_occupancy[day]}"}`
-    
+  
+  const modelsCodes_3=`
+  from fastapi import FastAPI
+  from pydantic import BaseModel
+  from typing import Optional
+  import uuid
+
+  class Book(BaseModel):
+    id: str #str = Field(default_factory=lambda: str(uuid.uuid4())) # ensures every Client instance has a unique id if not explicitly provided.
+    title: str
+    author: str
+    year: int
+    price: float
+  `
+
+  const endpointCodes_3=`
+  books = []
+  book_id_number=1
+
+  @app.post('/books/', response_model=dict)
+  async def register_new_book(book: Book, response: Response):
+    global book_id_counter
+    new_book = book.dict()
+    new_book['id']=book_id_counter
+    books.append(new_book)
+    book_id_counter+=1
+    return {"message":"Book added successfully", "book":new_book}
+
+
+  # get a list of all books
+  @app.get('/books', response_model=List[dict])
+  async def get_all_books():
+    return books
+  
+  # get a single book by ID
+  @app.get('/books/{books_id})
+  async get_book(book_id:int):
+    for book in books:
+      if book['id']== book_id:
+        return book
+    raise HTTPException(status_code=404, message="book not found")
+  
+  # update a book by ID
+  @app.put('/books/{book_id}', response_model=dict)
+  async def update_book(book_id:int, updated_book:Book):
+    for book in books:
+      if book_id == book['id']:
+        book.update(updated_book.dict())
+        return {"message":"Book updated"}
+    raise HTTPException(status_code=404, details="book not found")
+
+  
+  # Delete a book by ID
+  @app.delete('/books/{book_id}', response_model=dict)
+  async def delete_book(book_id:int):
+    for book in books:
+      if book['id']==book_id:
+        books.remove(book)
+        return {"message": "Book deleted"}
+    raise HTTPException(status_code=404, detail="Book not found")
+
+  `
+
   return (
     <div>
       <h1>1. Design Market Place</h1>
@@ -268,6 +330,53 @@ const APIEndpoint = () => {
           }}
           defaultLanguage='python' 
           defaultValue={endpointCodes_2}
+      />
+
+      <h1>3. Design a Book Inventory</h1>
+      <p>
+      Create a FastAPI application for managing a book inventory.
+      The API should have the following endpoints: <br />
+      <b>1. Add a new book (POST /books/)<br /></b>
+      Request Body: title, author, year, price<br />
+      <b>2. Get a list of all books (GET /books/)<br /></b>
+      Response: List of all books in the inventory<br />
+      <b>3. Get a single book by its ID (GET /books/{'{book_id}'})<br /></b>
+      Response: The book's details or an error message if it doesn't exist<br />
+      <b>4. Update a book's details (PUT /books/{'{book_id}'})<br /></b>
+      Request Body: title, author, year, price<br />
+      Response: Updated book details or an error message if the book isn't found<br />
+      <b>5. Delete a book by its ID (DELETE /books/{'{book_id}'})<br /></b>
+      Response: Confirmation message or an error message<br />
+
+      </p>
+      <h1>models.py</h1>
+      <Editor
+        height='40vh' 
+        width='100vw' 
+        theme='vs-dark'
+        options={{
+          fontSize:14,
+          minimap:{
+            enabled: false
+          }
+        }}
+        defaultLanguage='python' 
+        defaultValue={modelsCodes_3}
+      />
+
+      <h1>main.py</h1>
+      <Editor 
+          height='70vh' 
+          width='100vw' 
+          theme='vs-dark'
+          options={{
+            fontSize:14,
+            minimap:{
+              enabled: false
+            }
+          }}
+          defaultLanguage='python' 
+          defaultValue={endpointCodes_3}
       />
       <button className='navigate-button' onClick={navigateToHome}>Home</button>
     </div>
