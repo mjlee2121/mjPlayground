@@ -240,6 +240,54 @@ const APIEndpoint = () => {
 
   `
 
+  const modelsCodes_4 = `
+  from fastapi import FastAPI
+  from pydantic import BaseModel
+  from typing import Optional
+  import uuid
+
+  class Driver(BaseModel):
+    id: int
+    name: char
+
+
+  class Rider(BaseModel):
+    id: int
+    username: char
+    pickup_request_location: tuple
+    dropoff_request_location: tuple
+    pickup_request_time: datetime
+    dropoff_request_time: datetime
+    expected_duration: datetime
+    expected_distance: float
+    assigned_driver: driver = Driver()
+  `
+  const endpointCodes_4=`
+    # Driver sign up
+    drivers_list =[]
+    duration = 0
+
+    @app.post('/signup')
+    async def signup(driver:Driver, response:Response):
+      # check for duplicated ID
+      if any(existing_driver.id == drivers_list.id for existing_driver in drivers_list):
+        raise HTTPException(status_code=404, detail="Duplicated driver")
+      
+      # when the driver successfully registered
+      drivers_list.append(driver)
+    
+    @app.post('/request)
+    async def request_ride(rider: Rider, response:Response):
+      
+
+    
+    def haversine(coord1, coord2):
+      takes care of haversine formula
+      return distance
+
+  `
+
+
   return (
     <div>
       <h1>1. Design Market Place</h1>
@@ -378,6 +426,43 @@ const APIEndpoint = () => {
           defaultLanguage='python' 
           defaultValue={endpointCodes_3}
       />
+
+      <h1>4. Uber/Lyft rides</h1>
+      <p>
+      An endpoint for drivers to sign up. And users to request/cancel rides <br />
+      When the user request a ride have the payload body contain time duration estimate and distance <br/>
+      </p>
+      <h1>models.py</h1>
+      <Editor
+        height='40vh' 
+        width='100vw' 
+        theme='vs-dark'
+        options={{
+          fontSize:14,
+          minimap:{
+            enabled: false
+          }
+        }}
+        defaultLanguage='python' 
+        defaultValue={modelsCodes_4}
+      />
+
+      <h1>main.py</h1>
+      <Editor 
+          height='70vh' 
+          width='100vw' 
+          theme='vs-dark'
+          options={{
+            fontSize:14,
+            minimap:{
+              enabled: false
+            }
+          }}
+          defaultLanguage='python' 
+          defaultValue={endpointCodes_4}
+      />
+
+
       <button className='navigate-button' onClick={navigateToHome}>Home</button>
     </div>
   )

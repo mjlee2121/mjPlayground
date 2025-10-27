@@ -4,7 +4,7 @@ html{
 }
 
 .universal-bg {
-  background: linear-gradient(#8DC7B4, #C7DDDA,#EDC6B4);
+  background: linear-gradient(#3292e5, #C7DDDA,#ffffff);
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -17,11 +17,11 @@ html{
 .navigate-button {
   width: 150px;
   height: 50px;
-  background-color: #1D4F43;
-  color: white;
+  background-color: transparent;
+  color: black;
   font-family:Arial, Helvetica, sans-serif;
   transition: 0.5s;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 
 .navigate-button:hover {
@@ -29,7 +29,7 @@ html{
   height: 50px;
   background-color: white;
   font-family:Arial, Helvetica, sans-serif;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   transition: 0.5s;
   cursor: pointer;
 }

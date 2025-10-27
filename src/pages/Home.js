@@ -48,11 +48,17 @@ export const Home = () => {
 
   return (
     <div className='container'>
+      <div className='top-menu'>
+        <button className='navigate-button'>About</button>
+        <button className='navigate-button'>Professional</button>
+        <button className='navigate-button'>Professional</button>
+      </div>
+
       <div className='introduction'>
 
-        <h1>Home Page</h1>
+        <h1>Welcome to Minji's Page!</h1>
         <Lottie style={{ width: 200, height: 200 }} animationData={animationData}></Lottie>
-        <h2>Hi, this is home page to my React playground</h2>
+        <h2>Hiii, this is home page to my React playground</h2>
         <p>If you'd like to go to other pages, please click from below</p>
       </div>
       <div className='links'>
