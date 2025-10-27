@@ -4,7 +4,7 @@ html{
 }
 
 .universal-bg {
-  background: linear-gradient(#3292e5, #C7DDDA,#ffffff);
+  background: linear-gradient(#3292e5, #daf3ef,#ffffff);
   justify-content: center;
   align-items: center;
   min-height: 100vh;

@@ -51,7 +51,8 @@ export const Home = () => {
       <div className='top-menu'>
         <button className='navigate-button'>About</button>
         <button className='navigate-button'>Professional</button>
-        <button className='navigate-button'>Professional</button>
+        <button className='navigate-button'>Playground</button>
+        <button className='navigate-button'>Interview Reviews</button>
       </div>
 
       <div className='introduction'>
