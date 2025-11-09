@@ -33,8 +33,46 @@ html{
   transition: 0.5s;
   cursor: pointer;
 }
+/*----------------------- Navbar -----------------------*/
+.navbar{
+  height:var(--nav-size);
+  background-color:  var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+  display: flex;
+  justify-content: center; /* horizontal adjustment*/
+}
+
+.nav-items{
+  gap: 1rem;
+  display: center;
+}
+
+.nav-item{
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size:2rem;
+}
+
+.nav-item.active{
+  color: #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+  font-weight: 600;
+}
+
+.nav-item:hover{
+  color: #ffcc00;
+  transition: 0.2s;
+  border-bottom: 2px solid #ffcc00;
+}
+
 
 /*----------------------- BoxPage -----------------------*/
+.introduction{
+  
+}
 
 .box{
   margin: 20px;

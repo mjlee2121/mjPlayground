@@ -3,6 +3,8 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import animationData from '../assets/aniki_hamster.json'
+import NavBar from '../component/NavBar'
+import NavItem from '../component/NavItem'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -48,13 +50,8 @@ export const Home = () => {
 
   return (
     <div className='container'>
-      <div className='top-menu'>
-        <button className='navigate-button'>About</button>
-        <button className='navigate-button'>Professional</button>
-        <button className='navigate-button'>Playground</button>
-        <button className='navigate-button'>Interview Reviews</button>
-      </div>
-
+      <NavBar />
+        
       <div className='introduction'>
 
         <h1>Welcome to Minji's Page!</h1>
