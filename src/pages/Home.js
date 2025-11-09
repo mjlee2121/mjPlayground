@@ -51,7 +51,7 @@ export const Home = () => {
   return (
     <div className='container'>
       <NavBar />
-        
+      
       <div className='introduction'>
 
         <h1>Welcome to Minji's Page!</h1>

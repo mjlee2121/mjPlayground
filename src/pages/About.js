@@ -10,9 +10,11 @@ const About = () => {
         document.body.classList.remove('universal-bg')
       }
     },[])
+
   return (
     <div>
       <NavBar />
+      
     </div>
   )
 }

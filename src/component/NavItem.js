@@ -14,7 +14,6 @@ const NavItem = () => {
         break
       case 'About':
         navigate('/about')
-
         break
       case 'Portfolio':
         navigate('/portfolio')
