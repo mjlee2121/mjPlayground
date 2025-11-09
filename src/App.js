@@ -13,6 +13,7 @@ import WPI from './pages/WPI.js';
 import Ramp from './pages/Ramp.js';
 import About from './pages/About.js';
 import Portfolio from './pages/Portfolio.js';
+import Hobby from './pages/Hobby.js';
 
 function App() {
   
@@ -35,7 +36,7 @@ function App() {
           <Route path="/ramp" element={<Ramp />} />
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
-
+          <Route path="/hobby" element={<Hobby />} />
         </Routes>
       </Router>
       

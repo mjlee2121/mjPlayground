@@ -49,7 +49,7 @@ export const Home = () => {
   },[])
 
   return (
-    <div className='container'>
+    <div>
       <NavBar />
       
       <div className='introduction'>
@@ -59,6 +59,7 @@ export const Home = () => {
         <h2>Hiii, this is home page to my React playground</h2>
         <p>If you'd like to go to other pages, please click from below</p>
       </div>
+      
       <div className='links'>
         <h2>Play ground</h2>
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>

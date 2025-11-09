@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const NavItem = () => {
-  const items = ['Home','About','Portfolio']
+  const items = ['Home','About','Portfolio','Hobby']
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -17,6 +17,9 @@ const NavItem = () => {
         break
       case 'Portfolio':
         navigate('/portfolio')
+        break
+      case 'Hobby':
+        navigate('/hobby')
         break
       default:
         break
@@ -33,6 +36,9 @@ const NavItem = () => {
       case 'Portfolio':
         navigate('/portfolio')
         return '/portfolio'
+      case 'Hobby':
+        navigate('/hobby')
+        return '/hobby'
       default:
         return '/'
     }

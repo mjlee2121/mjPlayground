@@ -10,6 +10,10 @@ html{
   min-height: 100vh;
 }
 
+.body {
+  margin: 0;
+  padding-top: calc(var(--nav-size) + 4rem); /* adjust as needed */
+}
 
 .navigate-button {
   width: 150px;
@@ -32,10 +36,10 @@ html{
 }
 /*----------------------- Navbar -----------------------*/
 .navbar{
+  position: fixed;
   height:var(--nav-size);
   width: 100vw;
   background-color: rgb(25, 24, 24);
-  
   padding: 2rem;
   border-bottom: var(--border);
   display: flex;
@@ -43,7 +47,7 @@ html{
 }
 
 .nav-items{
-  gap: 1rem;
+  gap: 2rem;
   display: center;
 }
 
@@ -74,31 +78,49 @@ html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  
   background-size: cover;
   background-position: center;
+  
+  color: white;
+  padding-top: calc(var(--nav-size)+4rem);
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+
 }
 
 .pilates {
+  padding-top: calc(var(--nav-size)+4rem);
   background-image: url('./assets/pilates.jpg');
+  padding-bottom: calc(var(--nav-size)+4rem);
 }
 
 .triathlon {
-
+  padding-top: calc(var(--nav-size)+4rem);
+  background-image: url('./assets/triathlon.jpg');
+  padding-bottom: calc(var(--nav-size)+4rem);
 }
 
 .cooking {
-
+  padding-top: calc(var(--nav-size)+4rem);
+  background-image: url('./assets/korean_food.jpg');
+  padding-bottom: calc(var(--nav-size)+4rem);
 }
 
 .sailing {
+  padding-top: calc(var(--nav-size)+4rem);
+  background-image: url('./assets/sailing.jpg');
+  padding-bottom: calc(var(--nav-size)+4rem);
+}
 
+.blank-section {
+  height: 1rem;
+  width: 100vw;
 }
 
 /*----------------------- BoxPage -----------------------*/
 .introduction{
-  
+  padding-top: calc(var(--nav-size)+4rem);
 }
 
 .box{
