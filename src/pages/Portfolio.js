@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 import NavBar from '../component/NavBar'
+import './Portfolio.css'
 
 const Portfolio = () => {
   useEffect(()=>{

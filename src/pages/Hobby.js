@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../component/NavBar'
+import './Hobby.css'
 
 const Hobby = () => {
   const handleClick = ()=> {
