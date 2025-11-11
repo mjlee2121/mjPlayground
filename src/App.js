@@ -11,7 +11,6 @@ import JSES6 from './pages/JSES6.js'
 import JSStaticMethods from './pages/JSStaticMethods.js';
 import WPI from './pages/WPI.js';
 import Ramp from './pages/Ramp.js';
-import About from './pages/About.js';
 import Portfolio from './pages/Portfolio.js';
 import Hobby from './pages/Hobby.js';
 
@@ -34,7 +33,6 @@ function App() {
           <Route path="/apiendpoint" element={<APIEndpoint />} />
           <Route path="/wpi" element={<WPI />} />
           <Route path="/ramp" element={<Ramp />} />
-          <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/hobby" element={<Hobby />} />
         </Routes>

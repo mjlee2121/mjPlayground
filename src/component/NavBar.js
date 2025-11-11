@@ -3,7 +3,6 @@ import NavItem from './NavItem'
 
 const NavBar = (props) => {
 
-
   return (
     <div>
       <nav className='navbar'>

@@ -71,7 +71,7 @@ html{
   border-bottom: 2px solid #ffcc00;
 }
 
-/* Hobby */
+/*----------------------- Hobby -----------------------*/
 .section {
   width: 100vw;
   display: flex;
@@ -99,28 +99,22 @@ html{
   justify-content: flex-start;
   padding-top: calc(var(--nav-size)+4rem);
   padding-left: 4rem;
-  background-image: url('./assets/pilates.jpg');
+  background-image: url('./assets/hobby/pilates.jpg');
   height: 30vh;
-}
-
-.pilates:hover {
-  height: 50vh;
-  transition: 1s;
-  cursor: pointer;
 }
 
 .triathlon {
   justify-content: flex-end;
   padding-top: calc(var(--nav-size)+4rem);
   padding-right: 4rem;
-  background-image: url('./assets/triathlon.jpg');
+  background-image: url('./assets/hobby/triathlon.jpg');
   padding-bottom: calc(var(--nav-size)+4rem);
   height: 30vh;
 }
 
 .cooking {
   padding-top: calc(var(--nav-size)+4rem);
-  background-image: url('./assets/korean_food.jpg');
+  background-image: url('./assets/hobby/korean_food.jpg');
   padding-bottom: calc(var(--nav-size)+4rem);
   padding-left: 4rem;
   height: 30vh;
@@ -129,7 +123,7 @@ html{
 .sailing {
   justify-content: flex-end;
   padding-top: calc(var(--nav-size)+4rem);
-  background-image: url('./assets/sailing.jpg');
+  background-image: url('./assets/hobby/sailing.jpg');
   padding-bottom: calc(var(--nav-size)+4rem);
   padding-right: 4rem;
   height: 30vh;

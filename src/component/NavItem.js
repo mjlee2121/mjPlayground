@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const NavItem = () => {
-  const items = ['Home','About','Portfolio','Hobby']
+  const items = ['Home','Portfolio','Hobby']
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -11,9 +11,6 @@ const NavItem = () => {
     switch(item){
       case 'Home':
         navigate('/')
-        break
-      case 'About':
-        navigate('/about')
         break
       case 'Portfolio':
         navigate('/portfolio')
@@ -30,9 +27,6 @@ const NavItem = () => {
     switch(path){
       case 'Home':
         return '/'
-      case 'About':
-        navigate('/about')
-        return '/about'
       case 'Portfolio':
         navigate('/portfolio')
         return '/portfolio'
