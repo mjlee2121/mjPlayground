@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import Lottie from 'lottie-react'
 import animationData from '../assets/aniki_hamster.json'
 import NavBar from '../component/NavBar'
-import NavItem from '../component/NavItem'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -49,7 +48,7 @@ export const Home = () => {
   },[])
 
   return (
-    <div>
+    <div className='body'>
       <NavBar />
       
       <div className='introduction'>
