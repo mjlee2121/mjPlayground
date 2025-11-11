@@ -1,4 +1,31 @@
-.tic-tac-toe {
+.portfolio {
+
+}
+
+.tic-tac-toe-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.tic-tac-toe-text {
+
+}
+
+.tic-tac-toe-img {
   display: flex;
   padding-top: 10rem;
+  width: 55wh;
+  height: 55vh;
+  border-radius: 5px;
+}
+
+a {
+  color: #ff6600;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff3300;
 }
