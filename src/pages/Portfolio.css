@@ -2,22 +2,29 @@
 
 }
 
-.tic-tac-toe-content {
+.content {
   display: flex;
-  align-items: flex-start;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
 }
 
-.tic-tac-toe-text {
-
+.text {
+  max-width: 30rem;
+  font-size: 1.5rem;
 }
 
 .tic-tac-toe-img {
   display: flex;
-  padding-top: 10rem;
-  width: 55wh;
-  height: 55vh;
-  border-radius: 5px;
+  width: 50rem;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.tic-tac-toe-img:hover {
+  transform: scale(1.1);
 }
 
 a {
@@ -28,4 +35,8 @@ a {
 
 a:hover {
   color: #ff3300;
+}
+
+.phone-content {
+
 }
