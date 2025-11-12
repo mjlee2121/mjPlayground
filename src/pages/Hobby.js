@@ -7,7 +7,7 @@ const Hobby = () => {
     
   }
   return (
-    <div className='body'>
+    <div>
       <NavBar />
             <div className='section pilates'>
               <h1 className='section-header1'>Pilates</h1>

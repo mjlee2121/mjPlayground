@@ -3,6 +3,10 @@ html{
   scroll-behavior: smooth;
 }
 
+:root {
+  --nav-size: 14rem;
+}
+
 .universal-bg {
   background: linear-gradient(#ffffff);
   justify-content: center;
@@ -11,8 +15,10 @@ html{
 }
 
 .body {
-  margin: 0;
-  padding-top: calc(var(--nav-size) + 4rem); /* adjust as needed */
+  margin-left: 2rem;
+  margin-bottom: 4rem;
+  padding-top: 10rem;
+  
 }
 
 .navigate-button {
@@ -37,13 +43,16 @@ html{
 /*----------------------- Navbar -----------------------*/
 .navbar{
   position: fixed;
-  height:var(--nav-size);
+  height: var(--nav-size);
   width: 100vw;
+  top: 0;
+  left: 0;
   background-color: rgb(25, 24, 24);
   padding: 2rem;
   border-bottom: var(--border);
   display: flex;
   justify-content: center; /* horizontal adjustment*/
+  z-index:1000;
 }
 
 .nav-items{
@@ -74,8 +83,9 @@ html{
 
 
 /*----------------------- BoxPage -----------------------*/
-.introduction{
-  padding-top: calc(var(--nav-size)+4rem);
+.introduction {
+  padding-top: 14rem;
+  padding-left: 2rem;
 }
 
 .box{

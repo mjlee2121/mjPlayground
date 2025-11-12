@@ -7,11 +7,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 100vh;
+  height: 90vh;
+  gap: 20px;
 }
 
 .text {
-  max-width: 30rem;
+  max-width: 70rem;
   font-size: 1.5rem;
 }
 

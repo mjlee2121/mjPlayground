@@ -1,10 +1,15 @@
 /*----------------------- Hobby -----------------------*/
+:root {
+  --nav-size: 3rem;
+}
+
 .section {
   width: 100vw;
   display: flex;
   align-items: center;
   background-size: cover;
   background-position: center;
+  padding-top: var(--nav-size);
   font-size: 4rem;
   color: rgb(226, 220, 220);
   text-align: center;
@@ -24,7 +29,7 @@
 
 .pilates {
   justify-content: flex-start;
-  padding-top: calc(var(--nav-size)+4rem);
+  padding-top: var(--nav-size);
   padding-left: 4rem;
   background-image: url('../assets/hobby/pilates.jpg');
   height: 30vh;

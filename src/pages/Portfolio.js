@@ -40,6 +40,18 @@ const Portfolio = () => {
           <div className='phone-image'>
             <img src={phoneImage} alt="phone-img" className="tic-tac-toe-img" />
           </div>
+        </div>
+
+        <div className='content'>
+          <div className='text'>
+            <h1>WO_Triathlon</h1>
+            <p>Triathlon training app understands women's body</p>
+            <p>I used JavaScript, React, Python to build the website</p>
+            {/* <a href="https://mjlee2121.github.io/phone-v2/" target='_blank'>click HERE</a> */}
+          </div>
+          <div className='phone-image'>
+            <img src={phoneImage} alt="phone-img" className="tic-tac-toe-img" />
+          </div>
           
         </div>
       

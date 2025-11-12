@@ -24,9 +24,8 @@ const Ide = () => {
   }
 
   return (
-    <div>
+    <div className='body'>
       <h1>IDE</h1>
-      <p></p>
       <div className='editor'>
         <Editor 
           height='50vh' 

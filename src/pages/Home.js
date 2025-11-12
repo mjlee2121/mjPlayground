@@ -48,26 +48,22 @@ export const Home = () => {
   },[])
 
   return (
-    <div className='body'>
+    <div>
       <NavBar />
       
-      <div className='introduction'>
-
+      <div className='body'>
         <h1>Welcome to Minji's Page!</h1>
         <Lottie style={{ width: 200, height: 200 }} animationData={animationData}></Lottie>
         <h2>Hiii, this is home page to my React playground</h2>
         <p>If you'd like to go to other pages, please click from below</p>
-      </div>
-      
-      <div className='links'>
+        
+
         <h2>Play ground</h2>
         <button className='navigate-button' onClick={navigateToInputs}>Input Page</button>
         <button className='navigate-button' onClick={navigateToIDE}>IDE</button>
         <button className='navigate-button' onClick={navigateToAPIEndpoint}>API Endpoints</button>
         <button className='navigate-button' onClick={navigateToJSES6}>JS ES6 Array Methods</button>
         <button className='navigate-button' onClick={navigateToJSStaticMethods}>JS Static Methods</button>
-
-
 
         <h2>Technical Interviews Review</h2>
         <button className='navigate-button' onClick={navigateToEdo}>EDO</button>
@@ -77,6 +73,7 @@ export const Home = () => {
         <button className='navigate-button' onClick={navigateToRamp}>Ramp</button>
 
       </div>
+    
     </div>
   )
 }
