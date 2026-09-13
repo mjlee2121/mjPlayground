@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Editor } from '@monaco-editor/react';
 import { map1Codes, map2Codes, filter1Codes,reduceCodes1, codes6, codes7 } from '../codeQueries/JavaScriptQuery.js'
+import NavBar from '../component/NavBar.js';
 // import map2Codes from '../codeQueries/JavaScriptQuery.js'
 // import filter1Codes from '../codeQueries/JavaScriptQuery.js'
 
@@ -73,6 +74,7 @@ const JavaScript = () => {
 
   return (
     <div>
+      <NavBar />
       <h1>Introduction</h1>
       <p>I practice and review JavaScript functions in this page.</p>
       <p>Here are list of example problems. <b>Click</b> to scroll to each section </p>

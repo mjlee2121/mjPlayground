@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import NavBar from '../component/NavBar';
 
 const Edo = () => {
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -29,6 +30,7 @@ const Edo = () => {
 
   return (
     <div className='container'>
+      <NavBar />
       <div className='problem-description'>
         <h1>Review of Failed Technical Interview- EDO</h1>      
         <p>I couldn't solve this problem when I was taking technical take home test for a company called EDO</p>

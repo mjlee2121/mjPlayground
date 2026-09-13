@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Editor } from '@monaco-editor/react';
+import NavBar from '../component/NavBar';
 
 const APIEndpoint = () => {
   const navigate = useNavigate()
@@ -290,6 +291,7 @@ const APIEndpoint = () => {
 
   return (
     <div>
+      <NavBar />
       <h1>1. Design Market Place</h1>
       <p>
       

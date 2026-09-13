@@ -13,16 +13,16 @@ import WPI from './pages/WPI.js';
 import Ramp from './pages/Ramp.js';
 import Portfolio from './pages/Portfolio.js';
 import Hobby from './pages/Hobby.js';
+import AboutMinji from './pages/AboutMinji.js';
 
 function App() {
-  
   return (
-    
-    <div>
-      {/* Define routes inside Router */}
       <Router basename="/mjPlayground">
-        <Routes>
-          <Route path="/" element={<Home />} />
+      <div className='universal-bg app-layout'>
+        <main className='main-content'>
+          <Routes>
+          <Route path="/" element={<AboutMinji />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/jses6" element={<JSES6 />}/>
           <Route path="/jsstaticmethods" element={<JSStaticMethods />}/>
           <Route path="/inputs" element={<Inputs />} />
@@ -36,10 +36,10 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/hobby" element={<Hobby />} />
         </Routes>
+        </main>
+        </div>
+
       </Router>
-      
-    </div>
-      
   );
 }
 

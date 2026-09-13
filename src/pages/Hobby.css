@@ -14,7 +14,6 @@
   color: rgb(226, 220, 220);
   text-align: center;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-
   transition: background-size 1s ease, height 1s ease;
 }
 
@@ -65,4 +64,13 @@
   height: 10rem;
   width: 100vw;
   background-color: black;
+}
+
+.climbing {
+  justify-content: flex-start;
+  padding-top: calc(var(--nav-size)+4rem);
+  background-image: url('../assets/hobby/climbing.jpg');
+  padding-bottom: calc(var(--nav-size)+4rem);
+  padding-left: 4rem;
+  height: 30vh;
 }

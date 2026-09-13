@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import { useEffect
+import { useEffect} from 'react';
+import NavBar from '../component/NavBar';
 
- } from 'react';
 const SrBe = () => {
   const navigate = useNavigate()
 
@@ -20,6 +20,7 @@ const SrBe = () => {
   
   return (
     <div>
+      <NavBar />
       <h1>Review of Failed Technical Interview - SR - Backend</h1>
       <h2>Problem Description</h2>
       <p>

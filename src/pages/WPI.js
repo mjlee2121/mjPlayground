@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import course from '../assets/courseAsset.json'
+import NavBar from '../component/NavBar'
 
 const WPI = () => {
   // const [jsonContent, setJsonContent] = useState(null)
@@ -48,6 +49,7 @@ const WPI = () => {
 
   return (
     <div>
+      <NavBar />
       <h1>Review of Technical Interview - WPI</h1>
       <p>I was given course information in course.json file</p>
       <p>The task is to display it on the UI in whatever format I'd like</p>

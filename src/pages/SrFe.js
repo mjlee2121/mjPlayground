@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import NavBar from '../component/NavBar';
 
 const SrFe = () => {
   const [errorMessage, setErrorMessage] = useState('')
@@ -123,6 +124,7 @@ const SrFe = () => {
   return (
     <div>
       <div className='page-description'>
+        <NavBar />
         <h1>Review of Failed Technical Interview - SR - FrontEnd</h1>
         <p>I couldn't solve this problem when I was taking technical test for a company 'SR'</p>
         <h2>Problem Description</h2>

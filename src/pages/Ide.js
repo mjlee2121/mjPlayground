@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
+import NavBar from '../component/NavBar';
 
 
 const Ide = () => {
@@ -12,19 +13,13 @@ const Ide = () => {
     navigate('/')
   }
 
-  useEffect(()=>{
-    //background color
-    document.body.classList.add('universal-bg')
-    return ()=>{
-      document.body.classList.remove('universal-bg')
-    }
-  },[])
   const handleOnChange = ()=>{
     console.log('code')
   }
 
   return (
     <div className='body'>
+      <NavBar/> 
       <h1>IDE</h1>
       <div className='editor'>
         <Editor 
@@ -43,7 +38,6 @@ const Ide = () => {
       </div>
       <div className='live-display'>
         <LiveProvider>
-          <LiveError />
           <LivePreview />
         </LiveProvider>
 

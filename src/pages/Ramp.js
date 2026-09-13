@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { Editor } from '@monaco-editor/react';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../component/NavBar';
 
 const Ramp = () => {
   const navigate = useNavigate()
@@ -81,6 +82,7 @@ const Ramp = () => {
   `
   return (
     <div>
+      <NavBar />
       <h1>
         Ramp Challenge
       </h1>

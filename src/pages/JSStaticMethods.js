@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import NavBar from '../component/NavBar'
 
 const JSStaticMethods = () => {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ const JSStaticMethods = () => {
 
   return (
     <div>
-      
+      <NavBar />
       <button className='navigate-button' onClick={navigateToHome}>Go to Home</button>
     </div>
   )

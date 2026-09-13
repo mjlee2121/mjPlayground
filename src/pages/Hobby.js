@@ -27,6 +27,12 @@ const Hobby = () => {
             <div className='section sailing'>
               <h1>Sailing</h1>
             </div>
+            
+            <div className='blank-section'></div>
+            
+            <div className='section climbing'>
+              <h1>Climbing</h1>
+            </div>
 
     </div>
   )

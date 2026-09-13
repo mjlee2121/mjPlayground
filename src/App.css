@@ -1,24 +1,38 @@
 /*----------------------- Universal -----------------------*/
-html{
+html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --nav-size: 14rem;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .universal-bg {
-  background: linear-gradient(#ffffff);
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(#8FC7B5, #EBC7B6);
   min-height: 100vh;
 }
 
+/* Overall Flex Layout */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main Content Wrapper */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+  overflow-x: auto;
+}
+
 .body {
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-bottom: 4rem;
-  padding-top: 10rem;
-  
+  padding-top: 1rem;
 }
 
 .navigate-button {
@@ -26,69 +40,106 @@ html{
   height: 50px;
   background-color: transparent;
   color: black;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   transition: 0.5s;
-  /* border-radius: 6px; */
 }
 
 .navigate-button:hover {
   width: 150px;
   height: 50px;
-  background-color: white;
-  font-family:Arial, Helvetica, sans-serif;
-  /* border-radius: 6px; */
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
   transition: 0.5s;
   cursor: pointer;
 }
-/*----------------------- Navbar -----------------------*/
-.navbar{
-  position: fixed;
-  height: var(--nav-size);
-  width: 100vw;
+
+/*----------------------- Top Navbar & Collapse System -----------------------*/
+.topnav-container {
+  position: sticky;
   top: 0;
-  left: 0;
-  background-color: rgb(25, 24, 24);
-  padding: 2rem;
-  border-bottom: var(--border);
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2pm 5pm rgba(0,0,0,0.3);
+}
+
+.topnav-header {
   display: flex;
-  justify-content: center; /* horizontal adjustment*/
-  z-index:1000;
+  align-items: center;
+  padding: 0.5rem 1rem;
 }
 
-.nav-items{
-  gap: 2rem;
-  display: center;
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0.3rem 0.6rem;
 }
 
-.nav-item{
+.hamburger-btn:hover {
+  color: #ffcc00;
+}
+
+.topnav-menu {
+  display: flex; /* ? */
+  flex-wrap: wrap;  /* ? */
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+  overflow: hidden; /* ? */
+}
+
+.topnav-menu.expanded {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.topnav-menu.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav-item {
   color: white;
   background: none;
   border: none;
   cursor: pointer;
-  font-size:2rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.nav-item.active{
+.nav-item.active {
   color: #ffcc00;
+  font-weight: 1000;
+  background-color: rgba(255, 204, 0, 0.15);
   border-bottom: 2px solid #ffcc00;
-  font-weight: 600;
 }
 
-.nav-item:hover{
+.nav-item:hover {
   color: #ffcc00;
   transition: 0.2s;
-  border-bottom: 2px solid #ffcc00;
+  background-color: rgba(255, 255, 255, 0.08);
 }
-
-
 
 /*----------------------- BoxPage -----------------------*/
 .introduction {
-  padding-top: 14rem;
-  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
-.box{
+.box {
   margin: 20px;
   width: 100px;
   height: 100px;
@@ -96,12 +147,13 @@ html{
   color: grey;
 }
 
-.first-line{
+.first-line {
   padding: 10px;
   margin: 5px;
   background-color: grey;
 }
-.second-line{
+
+.second-line {
   padding: 10px;
   margin: 5px;
   background-color: grey;
@@ -111,12 +163,13 @@ html{
   padding: 10px;
   margin: 10px;
 }
+
 .App {
   text-align: center;
 }
 
 .visible {
-  display:block;
+  display: block;
   width: 500px;
   height: 20px;
   border: 1px solid;
@@ -133,25 +186,13 @@ html{
   color: orange;
 }
 
-
 /*----------------------- Home -----------------------*/
-.home-icon{
-  padding:10px;
+.home-icon {
+  padding: 10px;
   color: navy;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
 /*----------------------- EDO ----------------------- */
-
 .number-button {
   width: 36px;
   height: 36px;
@@ -163,20 +204,17 @@ html{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.number-button:hover{
+.number-button:hover {
   background-color: white;
   border-radius: 6px;
   border-width: 1px;
   transition: 0.5s;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  
 }
 
 .reset-button {
   margin: 10px;
-  
 }
-
 
 /*----------------------- SR - FE -----------------------*/
 #inspectionForm {
@@ -187,6 +225,7 @@ html{
 .sr-visible {
   display: block;
 }
+
 .sr-invisible {
   display: none;
 }
@@ -207,6 +246,4 @@ html{
   border: 1px solid red;
   border-color: red;
   border-radius: 6px;
-
-
 }

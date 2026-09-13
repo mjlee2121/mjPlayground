@@ -1,6 +1,6 @@
 import { useState , useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import HomeIcon from '../component/HomeIcon'
+import NavBar from "../component/NavBar";
 
 const Inputs = () => {
   const navigate = useNavigate()
@@ -85,7 +85,7 @@ const Inputs = () => {
 
   return (
     <div className="body-page">
-      <HomeIcon /> 
+      <NavBar />
       <div className="description">
         <h1>This is input and form playground</h1>
         <p>This place is just my experiments on form and input</p>

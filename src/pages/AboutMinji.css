@@ -1,0 +1,118 @@
+/* 2x2 Dashboard Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (min-width: 850px) {
+  .dashboard-grid {
+    grid-template-columns: 1.1fr 1fr; /* Left column slightly wider */
+  }
+}
+
+/* Base Style for all 4 distinct cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card 1: Combined Profile Card */
+.profile-card {
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.photo-frame {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffcc00;
+  flex-shrink: 0;
+}
+
+.minji-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.intro-text h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: #111827;
+}
+
+.intro-text p {
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Card Headers */
+.journals-card h3, 
+.social-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #111827;
+}
+
+/* Card 3: Journals List */
+.journal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.journal-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.journal-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Card 4: Social Media Buttons */
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.social-btn.github { background-color: #24292e; }
+.social-btn.linkedin { background-color: #0a66c2; }
+.social-btn.threads { background-color: #000000; }
+
+.social-btn:hover {
+  opacity: 0.85;
+}
