@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './.bin/Home.js'
 import Inputs from './pages/Inputs'
 import Edo from './pages/Edo'
 import SrFe from './pages/SrFe'
@@ -13,7 +13,7 @@ import WPI from './pages/WPI.js';
 import Ramp from './pages/Ramp.js';
 import Portfolio from './pages/Portfolio.js';
 import Hobby from './pages/Hobby.js';
-import AboutMinji from './pages/AboutMinji.js';
+import AboutMinji from './pages/MainHub/AboutMinji.js';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
         <main className='main-content'>
           <Routes>
           <Route path="/" element={<AboutMinji />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/jses6" element={<JSES6 />}/>
           <Route path="/jsstaticmethods" element={<JSStaticMethods />}/>
           <Route path="/inputs" element={<Inputs />} />
