@@ -106,40 +106,51 @@
 }
 
 /* Card 4: Hobby List */
-/* Internal Horizontal Scroll Container */
+.hobby-card {
+  height: 220px;            /* Fixed card height */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;         /* Clips child scrollbar within card boundary */
+}
+
+/* Internal Scroll Area */
 .hobby-scroll-container {
+  flex: 1;
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
-  padding: 0.25rem 0.25rem 0.75rem 0.25rem; /* Padding gives space for internal scrollbar */
+  align-items: center;
+  overflow-x: auto;         /* Displays horizontal scrollbar inside container */
+  overflow-y: hidden;
+  padding-bottom: 0.75rem;  /* Ensures space for internal scrollbar below images */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Custom Internal Scrollbar Styling */
+/* Scrollbar Customization */
 .hobby-scroll-container::-webkit-scrollbar {
-  height: 8px; /* Slightly thicker so it's clean and accessible inside the card */
+  height: 6px;
 }
 
 .hobby-scroll-container::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
 }
 
 .hobby-scroll-container::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: background-color 0.2s ease;
 }
 
 .hobby-scroll-container::-webkit-scrollbar-thumb:hover {
-  background-color: #94a3b8;
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
-/* Clickable Link & Image Styles */
+/* Image Link Item */
 .hobby-photo-link {
-  flex: 0 0 130px;
-  height: 130px;
+  flex: 0 0 100px;
+  height: 100px;
   border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: start;
@@ -157,7 +168,6 @@
 .hobby-photo-link:hover .hobby-img {
   transform: scale(1.08);
 }
-
 /* Social Media Buttons */
 .social-links {
   display: flex;
