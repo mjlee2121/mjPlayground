@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import NavBar from "../component/NavBar";
 import Footer from "../component/Footer"
 import MinjiPhoto from "../assets/AboutMinji/MinjiPhoto.png";
+
+import Pilates from '../assets/hobby/pilates.jpg';
+import Climbing from '../assets/hobby/climbing.jpg';
+import Korean_food from '../assets/hobby/korean_food.jpg';
+import Plant from '../assets/hobby/plant.jpg';
+import Sailing from '../assets/hobby/sailing.jpg';
+import Triathlon from '../assets/hobby/triathlon.jpg'
+
 import "./AboutMinji.css"
 
 const journals = [
@@ -10,6 +18,15 @@ const journals = [
   { id: 2, title: "Exploring Modern JS Features & ES6 Methods", path: "/jses6" },
   { id: 3, title: "Designing Interactive UI Components in React", path: "/sr-fe" },
 ];
+
+const hobbyPhotos = [
+   { id: 1, src: Pilates, alt: 'Pilates' },
+   { id: 2, src: Climbing, alt: 'Climbing' },
+   { id: 3, src: Korean_food, alt: 'Korean_food' },
+   { id: 4, src: Plant, alt: 'Plant' },
+   { id: 5, src: Sailing, alt: 'Sailing' },
+   { id: 6, src: Triathlon, alt: 'Triathlon' },
+]
 
 const AboutMinji = () => {
   return (
@@ -38,9 +55,7 @@ const AboutMinji = () => {
             style={{ borderRadius: "12px" }}
             src="https://open.spotify.com/embed/playlist/1Auym7W5lF9oShTlXedrXo?si=xzjbrBeVTw-WrjwbMgU_6Q"
             width="100%"
-            height="100%"
-            minHeight="352"
-            frameBorder="0"
+            height="352px"
             allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
@@ -62,10 +77,17 @@ const AboutMinji = () => {
           </ul>
         </section>
 
-        {/* Card 4: Bottom-Right (Social Media Only) */}
-        <section className="card social-card">
-          <h3>Cooking</h3>
-          
+        {/* Card 4: Bottom-Right (Hobby Only) */}
+        <section className="card hobby-card">
+          <h3>Hobby</h3>
+          <div className="hobby-scroll-container">
+            {hobbyPhotos.map((photo)=> (
+              <Link key={photo.id} to="/hobby" className="hobby-photo-link">
+              <img src={photo.src} alt={photo.alt} className="hobby-img"/>
+              </Link>
+            ))}
+
+          </div>
         </section>
 
       </main>
