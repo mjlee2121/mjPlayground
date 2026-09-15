@@ -7,7 +7,7 @@ import MinjiPhoto from "../../assets/AboutMinji/MinjiPhoto.png";
 import Pilates from '../../assets/hobby/pilates.jpg';
 import Climbing from '../../assets/hobby/climbing.jpg';
 import Korean_food from '../../assets/hobby/korean_food.jpg';
-import Plant from '../../assets/hobby/plant.jpg';
+import Plant from '../../assets/hobby/planst.jpg';
 import Sailing from '../../assets/hobby/sailing.jpg';
 import Triathlon from '../../assets/hobby/triathlon.jpg'
 
