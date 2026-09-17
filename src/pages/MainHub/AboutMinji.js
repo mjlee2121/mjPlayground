@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import {supabase} from '../../config/supabaseClient.js'
+
 import NavBar from "../../component/NavBar";
 import Footer from "../../component/Footer"
 import MinjiPhoto from "../../assets/AboutMinji/MinjiPhoto.png";
@@ -7,7 +10,7 @@ import MinjiPhoto from "../../assets/AboutMinji/MinjiPhoto.png";
 import Pilates from '../../assets/hobby/pilates.jpg';
 import Climbing from '../../assets/hobby/climbing.jpg';
 import Korean_food from '../../assets/hobby/korean_food.jpg';
-import Plant from '../../assets/hobby/planst.jpg';
+import Plant from '../../assets/hobby/plant.jpg';
 import Sailing from '../../assets/hobby/sailing.jpg';
 import Triathlon from '../../assets/hobby/triathlon.jpg'
 
@@ -27,6 +30,25 @@ const hobbyPhotos = [
    { id: 5, src: Sailing, alt: 'Sailing' },
    { id: 6, src: Triathlon, alt: 'Triathlon' },
 ]
+
+const TestConnection = () => {
+  useEffect(()=>{
+    const testFetch = async () => {
+      const { data, error } = await supabase
+        .from('journals') // Replace with any table name in your database
+        .select('*')
+        .limit(1);
+
+      if (error) {
+        console.error('Supabase connection error:', error.message);
+      } else {
+        console.log('Supabase connected successfully! Data received:', data);
+      }
+    };
+
+    testFetch();
+  }, [])
+}
 
 const AboutMinji = () => {
   return (
