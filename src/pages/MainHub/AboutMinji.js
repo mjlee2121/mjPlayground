@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import {supabase} from '../../config/supabaseClient.js'
+import {supabase} from "../../config/supabaseClient.js";
+import JournalList from "../Journal/JournalList.js";
 
 import NavBar from "../../component/NavBar";
 import Footer from "../../component/Footer"
