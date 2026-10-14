@@ -1,15 +1,24 @@
 {
   "files": {
-    "main.css": "/mjPlayground/static/css/main.9ef8e250.css",
-    "main.js": "/mjPlayground/static/js/main.c2f8691f.js",
+    "main.css": "/mjPlayground/static/css/main.3dd17a12.css",
+    "main.js": "/mjPlayground/static/js/main.91a8351e.js",
     "static/js/453.06c464ff.chunk.js": "/mjPlayground/static/js/453.06c464ff.chunk.js",
+    "static/media/sailing.jpg": "/mjPlayground/static/media/sailing.eb9580c45f43b4931624.jpg",
+    "static/media/triathlon.jpg": "/mjPlayground/static/media/triathlon.252fbc9fc89b1e5ba0a4.jpg",
+    "static/media/MinjiPhoto.png": "/mjPlayground/static/media/MinjiPhoto.b11b05ec6fab51d17d1e.png",
+    "static/media/korean_food.jpg": "/mjPlayground/static/media/korean_food.8a5f4dad22e00ea8f596.jpg",
+    "static/media/pilates.jpg": "/mjPlayground/static/media/pilates.f6789990a1bade1036df.jpg",
+    "static/media/plant.jpg": "/mjPlayground/static/media/plant.c2d6fc38395b008745b0.jpg",
+    "static/media/climbing.jpg": "/mjPlayground/static/media/climbing.7688d5e88a23e28169bc.jpg",
+    "static/media/phone.png": "/mjPlayground/static/media/phone.96fe1c2366cbc4aa1608.png",
+    "static/media/tictac.png": "/mjPlayground/static/media/tictac.7ffa27877255464d2d8e.png",
     "index.html": "/mjPlayground/index.html",
-    "main.9ef8e250.css.map": "/mjPlayground/static/css/main.9ef8e250.css.map",
-    "main.c2f8691f.js.map": "/mjPlayground/static/js/main.c2f8691f.js.map",
+    "main.3dd17a12.css.map": "/mjPlayground/static/css/main.3dd17a12.css.map",
+    "main.91a8351e.js.map": "/mjPlayground/static/js/main.91a8351e.js.map",
     "453.06c464ff.chunk.js.map": "/mjPlayground/static/js/453.06c464ff.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ef8e250.css",
-    "static/js/main.c2f8691f.js"
+    "static/css/main.3dd17a12.css",
+    "static/js/main.91a8351e.js"
   ]
 }
