@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import {supabase} from '../../config/supabaseClient.js'
+import {supabase} from "../../config/supabaseClient.js";
+import JournalList from "../Journal/JournalList.js";
 
 import NavBar from "../../component/NavBar";
 import Footer from "../../component/Footer"
@@ -15,12 +16,6 @@ import Sailing from '../../assets/hobby/sailing.jpg';
 import Triathlon from '../../assets/hobby/triathlon.jpg'
 
 import "./AboutMinji.css"
-
-const journals = [
-  { id: 1, title: "Building a URL Shortener with FastAPI & Redis", path: "/sr-be" },
-  { id: 2, title: "Exploring Modern JS Features & ES6 Methods", path: "/jses6" },
-  { id: 3, title: "Designing Interactive UI Components in React", path: "/sr-fe" },
-];
 
 const hobbyPhotos = [
    { id: 1, src: Pilates, alt: 'Pilates' },
@@ -86,18 +81,7 @@ const AboutMinji = () => {
         </section>
 
         {/* Card 3: Bottom-Left (Journals Only) */}
-        <section className="card journals-card">
-          <h3>Journals</h3>
-          <ul className="journal-list">
-            {journals.map((journal) => (
-              <li key={journal.id}>
-                <Link to={journal.path} className="journal-link">
-                  {journal.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <JournalList />
 
         {/* Card 4: Bottom-Right (Hobby Only) */}
         <section className="card hobby-card">
