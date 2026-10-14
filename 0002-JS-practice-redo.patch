@@ -1,0 +1,249 @@
+From c7106b648bf871f8cdf2de9b090ace04a0e35221 Mon Sep 17 00:00:00 2001
+From: tahsworld <registrar@theacademy.ac>
+Date: Tue, 13 Oct 2026 20:04:05 -0400
+Subject: [PATCH 2/2] JS practice redo
+
+---
+ src/pages/JS Practice/JSPractice.js |  9 +++
+ src/pages/Journal/CreateJournal.js  | 86 +++++++++++++++++++++--------
+ src/pages/Journal/JournalList.js    | 47 +++++++++++-----
+ src/pages/MainHub/AboutMinji.js     | 19 +------
+ 4 files changed, 106 insertions(+), 55 deletions(-)
+ create mode 100644 src/pages/JS Practice/JSPractice.js
+
+diff --git a/src/pages/JS Practice/JSPractice.js b/src/pages/JS Practice/JSPractice.js
+new file mode 100644
+index 0000000..ba45572
+--- /dev/null
++++ b/src/pages/JS Practice/JSPractice.js	
+@@ -0,0 +1,9 @@
++import React from 'react'
++
++const JSPractice = () => {
++  return (
++    <div>JSPractice</div>
++  )
++}
++
++export default JSPractice
+\ No newline at end of file
+diff --git a/src/pages/Journal/CreateJournal.js b/src/pages/Journal/CreateJournal.js
+index 9d440c6..fcade28 100644
+--- a/src/pages/Journal/CreateJournal.js
++++ b/src/pages/Journal/CreateJournal.js
+@@ -1,16 +1,20 @@
+ import React, { useState } from 'react';
+-import { supabase } from '../supabaseClient';
++import { supabase } from '../../config/supabaseClient'; // Adjusted relative path
++import { Link, useNavigate } from 'react-router-dom';
++import NavBar from '../../component/NavBar';
++import Footer from '../../component/Footer';
+ 
+ const CreateJournal = () => {
+   const [title, setTitle] = useState('');
+   const [content, setContent] = useState('');
+   const [status, setStatus] = useState('');
++  const navigate = useNavigate();
+ 
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     setStatus('Publishing...');
+ 
+-    const { data, error } = await supabase
++    const { error } = await supabase
+       .from('journals')
+       .insert([{ title, content }]);
+ 
+@@ -20,30 +24,68 @@ const CreateJournal = () => {
+       setStatus('Journal published successfully!');
+       setTitle('');
+       setContent('');
++      // Redirect to main page after 1 second
++      setTimeout(() => navigate('/'), 1000);
+     }
+   };
+ 
+   return (
+-    <div className="card">
+-      <h2>Write New Journal</h2>
+-      <form onSubmit={handleSubmit}>
+-        <input
+-          type="text"
+-          placeholder="Title"
+-          value={title}
+-          onChange={(e) => setTitle(e.target.value)}
+-          required
+-        />
+-        <textarea
+-          placeholder="Write your journal entry..."
+-          value={content}
+-          onChange={(e) => setContent(e.target.value)}
+-          rows="6"
+-          required
+-        />
+-        <button type="submit">Publish Entry</button>
+-      </form>
+-      {status && <p>{status}</p>}
++    <div className="universal-bg app-layout">
++      <NavBar />
++      <main className="main-content" style={{ padding: '2rem 1rem', maxWidth: '800px', margin: '0 auto' }}>
++        <Link to="/" style={{ color: '#2563eb', textDecoration: 'none', fontWeight: '500' }}>
++          &larr; Back to Dashboard
++        </Link>
++
++        <div className="card" style={{ marginTop: '1.5rem', padding: '2rem' }}>
++          <h2 style={{ marginTop: 0 }}>Write New Journal</h2>
++          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
++            <input
++              type="text"
++              placeholder="Title"
++              value={title}
++              onChange={(e) => setTitle(e.target.value)}
++              required
++              style={{
++                padding: '0.75rem',
++                borderRadius: '8px',
++                border: '1px solid #d1d5db',
++                fontSize: '1rem'
++              }}
++            />
++            <textarea
++              placeholder="Write your journal entry..."
++              value={content}
++              onChange={(e) => setContent(e.target.value)}
++              rows="8"
++              required
++              style={{
++                padding: '0.75rem',
++                borderRadius: '8px',
++                border: '1px solid #d1d5db',
++                fontSize: '1rem',
++                fontFamily: 'inherit'
++              }}
++            />
++            <button 
++              type="submit"
++              style={{
++                padding: '0.75rem 1.5rem',
++                borderRadius: '8px',
++                border: 'none',
++                backgroundColor: '#2563eb',
++                color: '#ffffff',
++                fontWeight: '600',
++                cursor: 'pointer'
++              }}
++            >
++              Publish Entry
++            </button>
++          </form>
++          {status && <p style={{ marginTop: '1rem', color: '#374151' }}>{status}</p>}
++        </div>
++      </main>
++      <Footer />
+     </div>
+   );
+ };
+diff --git a/src/pages/Journal/JournalList.js b/src/pages/Journal/JournalList.js
+index 7d7add9..8576985 100644
+--- a/src/pages/Journal/JournalList.js
++++ b/src/pages/Journal/JournalList.js
+@@ -16,27 +16,44 @@ const JournalList = () => {
+       .select('id, title, created_at')
+       .order('created_at', { ascending: false });
+ 
+-    if (!error) {
++    if (error) {
++      console.error('Error fetching journals:', error.message);
++    } else {
+       setJournals(data);
+     }
+     setLoading(false);
+   };
+ 
+-  if (loading) return <p>Loading journals...</p>;
+-
+   return (
+-    <div className="card journals-card">
+-      <h3>Journals</h3>
+-      <ul className="journal-list">
+-        {journals.map((journal) => (
+-          <li key={journal.id}>
+-            <Link to={`/journals/${journal.id}`} className="journal-link">
+-              {journal.title}
+-            </Link>
+-          </li>
+-        ))}
+-      </ul>
+-    </div>
++    <section className="card journals-card">
++      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
++        <h3 style={{ margin: 0 }}>Journals</h3>
++        <Link to="/journal/new" style={{ fontSize: '0.85rem', textDecoration: 'none', color: '#2563eb', fontWeight: '600' }}>
++          + Write Entry
++        </Link>
++      </div>
++
++      {loading ? (
++        <p>Loading journals...</p>
++      ) : journals.length === 0 ? (
++        <div>
++          <p style={{ color: '#6b7280', marginBottom: '0.5rem' }}>No journal entries yet.</p>
++          <Link to="/journal/new" style={{ color: '#2563eb', fontWeight: '500' }}>
++            Write your first entry &rarr;
++          </Link>
++        </div>
++      ) : (
++        <ul className="journal-list">
++          {journals.map((journal) => (
++            <li key={journal.id}>
++              <Link to={`/journals/${journal.id}`} className="journal-link">
++                {journal.title}
++              </Link>
++            </li>
++          ))}
++        </ul>
++      )}
++    </section>
+   );
+ };
+ 
+diff --git a/src/pages/MainHub/AboutMinji.js b/src/pages/MainHub/AboutMinji.js
+index 294e3ea..f54755d 100644
+--- a/src/pages/MainHub/AboutMinji.js
++++ b/src/pages/MainHub/AboutMinji.js
+@@ -17,12 +17,6 @@ import Triathlon from '../../assets/hobby/triathlon.jpg'
+ 
+ import "./AboutMinji.css"
+ 
+-const journals = [
+-  { id: 1, title: "Building a URL Shortener with FastAPI & Redis", path: "/sr-be" },
+-  { id: 2, title: "Exploring Modern JS Features & ES6 Methods", path: "/jses6" },
+-  { id: 3, title: "Designing Interactive UI Components in React", path: "/sr-fe" },
+-];
+-
+ const hobbyPhotos = [
+    { id: 1, src: Pilates, alt: 'Pilates' },
+    { id: 2, src: Climbing, alt: 'Climbing' },
+@@ -87,18 +81,7 @@ const AboutMinji = () => {
+         </section>
+ 
+         {/* Card 3: Bottom-Left (Journals Only) */}
+-        <section className="card journals-card">
+-          <h3>Journals</h3>
+-          <ul className="journal-list">
+-            {journals.map((journal) => (
+-              <li key={journal.id}>
+-                <Link to={journal.path} className="journal-link">
+-                  {journal.title}
+-                </Link>
+-              </li>
+-            ))}
+-          </ul>
+-        </section>
++        <JournalList />
+ 
+         {/* Card 4: Bottom-Right (Hobby Only) */}
+         <section className="card hobby-card">
+-- 
+2.37.1
+
